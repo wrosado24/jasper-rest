@@ -1,5 +1,8 @@
 package com.nivutech.utils;
 
-public class JasperUtils {
+import org.springframework.stereotype.Component;
 
+@Component
+public class JasperUtils {
+	
 }

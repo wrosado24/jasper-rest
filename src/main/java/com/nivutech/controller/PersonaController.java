@@ -5,11 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nivutech.entity.Persona;
-import com.nivutech.repository.PersonaRepository;
+import com.nivutech.service.PersonaService;
 
 
 @CrossOrigin("*")
@@ -18,10 +19,20 @@ import com.nivutech.repository.PersonaRepository;
 public class PersonaController {
 
 	@Autowired
-	private PersonaRepository personaRepository;
+	private PersonaService personaRepository;
 	
 	@GetMapping("/listar")
 	public List<Persona> listar(){
-		return personaRepository.findAll();
+		return personaRepository.list();
+	}
+	
+	@PostMapping("/reporte/pdf")
+	public void reportePdf() {
+		
+	}
+	
+	@PostMapping("/reporte/xls")
+	public void reporteXls() {
+		
 	}
 }
